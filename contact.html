@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ — DevOps Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 10px;
+            line-height: 2;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            overflow-wrap: anywhere;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 14px 0 6px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 16px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover { background: #764ba2; }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="./index.html">Trang chủ</a>
+            <a href="./about.html">Giới thiệu</a>
+            <a href="./contact.html" class="active">Liên hệ</a>
+        </nav>
+
+        <h1>Liên hệ với tôi</h1>
+        <p class="intro">
+            Cảm ơn bạn đã ghé thăm portfolio của tôi!
+        </p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> [Email của bạn]</p>
+            <p><strong>GitHub:</strong>
+                <a href="https://github.com/LyTinh288"
+                   target="_blank" rel="noopener noreferrer">
+                    github.com/LyTinh288
+                </a>
+            </p>
+            <p><strong>Dự án:</strong> DevOps Lab 1 — Portfolio</p>
+        </div>
+
+        <form id="contactForm">
+            <label for="name">Họ và tên</label>
+            <input id="name" type="text" placeholder="Nhập họ tên"
+                   required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Nhập email"
+                   required>
+
+            <label for="message">Nội dung</label>
+            <textarea id="message" placeholder="Nhập lời nhắn"
+                      required></textarea>
+
+            <button type="submit">Tạo email liên hệ</button>
+        </form>
+
+        <div class="footer">
+            DevOps Lab 1 — Contact
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener(
+            'submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                const subject = encodeURIComponent(
+                    'Liên hệ từ portfolio'
+                );
+                const body = encodeURIComponent(
+                    'Họ tên: ' + name +
+                    '\nEmail: ' + email +
+                    '\nNội dung: ' + message
+                );
+
+                // Thay bằng email thật của bạn
+                window.location.href =
+                    'mailto:YOUR_EMAIL@example.com?subject=' +
+                    subject + '&body=' + body;
+            }
+        );
+    </script>
+</body>
+</html>

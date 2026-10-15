@@ -27,11 +27,35 @@
         .container {
             background: white;
             border-radius: 16px;
-            padding: 48px;
+            padding: 40px;
             max-width: 600px;
             width: 100%;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             text-align: center;
+        }
+
+        /* Thanh điều hướng */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            background: #667eea;
+            color: white;
         }
 
         /* Ảnh đại diện */
@@ -105,12 +129,28 @@
                 width: 120px;
                 height: 120px;
             }
+
+            .navbar {
+                gap: 4px;
+            }
+
+            .navbar a {
+                padding: 9px 12px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+
+        <!-- Navigation: điều hướng giữa 3 trang -->
+        <nav class="navbar">
+            <a href="./index.html" class="active">Trang chủ</a>
+            <a href="./about.html">Giới thiệu</a>
+            <a href="./contact.html">Liên hệ</a>
+        </nav>
 
         <!-- Ảnh đại diện -->
         <img
@@ -166,4 +206,3 @@
     </script>
 </body>
 </html>
-```
